@@ -1,6 +1,6 @@
 # twilson63/skills
 
-A collection of skills for opencode.
+A collection of agent skills, published for [`npx skills`](https://github.com/vercel-labs/skills) and indexed on [skills.sh](https://skills.sh). Works with opencode, Hyperbot, and any runtime that speaks the SKILL.md convention.
 
 ## What are Skills?
 
@@ -8,44 +8,25 @@ Skills are specialized instructions that give AI agents detailed knowledge and s
 
 ## Available Skills
 
-### zenbin
-A skill for publishing HTML pages to [ZenBin](https://zenbin.onrender.com) using the ZenBin API. ZenBin is a simple service that lets you publish HTML pages to unique URLs that can be shared or viewed in a browser.
-
-**Features:**
-- Publish HTML content with base64 encoding support
-- Optional page authentication (password or URL token)
-- Built-in proxy API for external calls
-- Custom page titles and content types
+| Skill | What it does |
+| --- | --- |
+| [zenbin](skills/zenbin/SKILL.md) | Publish HTML pages to [ZenBin](https://zenbin.onrender.com), a pastebin-like service for agents, with optional auth and a proxy API. |
+| [health-coach-creator](skills/health-coach-creator/SKILL.md) | Interview a user to capture their health data, build a personal Coach agent, then run morning/evening check-ins and weekly reviews on a metabolic-reset protocol. |
 
 ## Installation
 
-Install the zenbin skill:
-
 ```bash
 npx skills add https://github.com/twilson63/skills --skill zenbin
+npx skills add https://github.com/twilson63/skills --skill health-coach-creator
 ```
-
-This will make the zenbin skill available to opencode, allowing you to request ZenBin-related tasks like publishing HTML pages.
-
-## Usage
-
-Once installed, you can ask opencode to help you with ZenBin tasks:
-
-```
-Publish this HTML to ZenBin with ID "my-page"
-```
-
-The zenbin skill will provide detailed instructions on:
-- How to structure the API request
-- Encoding options (UTF-8 vs base64)
-- Authentication methods
-- Using the proxy API for external calls
 
 ## Project Structure
 
 ```
 skills/
-└── zenbin/
+├── zenbin/
+│   └── SKILL.md
+└── health-coach-creator/
     └── SKILL.md
 ```
 
